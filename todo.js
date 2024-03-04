@@ -3,7 +3,9 @@ const input = document.getElementById("todo-input");
 const todoLane = document.getElementById("todo-lane");
 const add_btn = document.getElementById("plus_btn");
 const modal_add = document.getElementById("add_task");
+
 var elements = document.getElementsByClassName("task");
+
 const modal_input = document.getElementById("modal_input");
 
 
