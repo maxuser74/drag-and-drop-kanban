@@ -99,6 +99,8 @@
   font-size: 16px;
   cursor: move;
   margin-bottom: 12px;
+  width: 100%;
+  resize: none;
 }
 
 .is-dragging {
@@ -138,6 +140,3 @@
   width: 100px;
   margin: 4px;
 }
-
-
-
