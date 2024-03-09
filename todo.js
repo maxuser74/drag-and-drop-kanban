@@ -39,7 +39,6 @@ var myOnChanged = function() {
 };
 
 function add_task(){
-
   const newTask = document.createElement("textarea");
   newTask.classList.add("task");
   newTask.setAttribute("draggable", "true");
@@ -57,8 +56,6 @@ function add_task(){
 
   todoLane.appendChild(newTask);
 
-  input.value = "";
-
 };
 
 for (var i = 0; i < elements.length; i++) {
@@ -69,6 +66,4 @@ for (var i = 0; i < elements.length; i++) {
 };
 
 add_btn.addEventListener("click", add_task);
-
-
 
