@@ -19,7 +19,7 @@ function add_task() {
   newTask.setAttribute("draggable", "true");
   newTask.setAttribute("rows", "1");
 
-  newTask.innerText = "new task";
+  newTask.innerHTML = "new task";
 
   newTask.addEventListener("dragstart", () => {
     newTask.classList.add("is-dragging");
@@ -49,7 +49,7 @@ function populate_data() {
   var children = todoLane.children;
   for (var i = 0; i < children.length; i++) {
     if (children[i].tagName === "TEXTAREA") {
-      todo_elements.push(children[i].innerHTML);
+      todo_elements.push(children[i].value);
     }
   }
 
@@ -57,7 +57,7 @@ function populate_data() {
   var children = doingLane.children;
   for (var i = 0; i < children.length; i++) {
     if (children[i].tagName === "TEXTAREA") {
-      doing_elements.push(children[i].innerHTML);
+      doing_elements.push(children[i].value);
     }
   }
 
@@ -65,7 +65,7 @@ function populate_data() {
   var children = doneLane.children;
   for (var i = 0; i < children.length; i++) {
     if (children[i].tagName === "TEXTAREA") {
-      done_elements.push(children[i].innerHTML);
+      done_elements.push(children[i].value);
     }
   }
 
