@@ -36,14 +36,14 @@ Get groceries</textarea
 
         <div class="swim-lane col mx-2" id="doing-lane">
           <h3 class="heading">Doing</h3>
-          <textarea class="task" draggable="true">
+          <textarea class="task" rows="1" draggable="true">
 Binge 80 hours of Game of Thrones</textarea
           >
         </div>
 
         <div class="swim-lane col mx-2" id="done-lane">
           <h3 class="heading">Done</h3>
-          <textarea class="task" draggable="true">
+          <textarea class="task" rows="1" draggable="true">
 Watch video of a man raising a grocery store lobster as a pet</textarea
           >
         </div>
@@ -52,37 +52,6 @@ Watch video of a man raising a grocery store lobster as a pet</textarea
     <div class="tools row">
       <div class="btn btn-light" id="trash_btn">Trash</div>
       <button type="button" class="btn btn-light" id="plus_btn">+</button>
-    </div>
-
-    <div class="modal" id="add_task" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Task</h5>
-            <button
-              type="button"
-              class="btn-close"
-              id="modal_close_btn_1"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <input type="text" class="form-control" id="modal_input" />
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-              id="modal_close_btn_2"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
     </div>
   </body>
 </html>
