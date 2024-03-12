@@ -1,6 +1,7 @@
 const todoLane = document.getElementById("todo-lane");
 const doingLane = document.getElementById("doing-lane");
 const doneLane = document.getElementById("done-lane");
+const board = document.getElementById("board");
 
 const add_btn = document.getElementById("plus_btn");
 var elements = document.getElementsByClassName("task");
@@ -13,13 +14,20 @@ var myOnChanged = function () {
   this.style.height = this.scrollHeight + "px";
 };
 
+window.addEventListener("resize", () => {
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style.height = "auto";
+    elements[i].style.height = elements[i].scrollHeight + "px";
+  }
+});
+
 function add_task() {
   const newTask = document.createElement("textarea");
   newTask.classList.add("task");
   newTask.setAttribute("draggable", "true");
   newTask.setAttribute("rows", "1");
 
-  newTask.innerHTML = "new task";
+  newTask.innerHTML = "New task";
 
   newTask.addEventListener("dragstart", () => {
     newTask.classList.add("is-dragging");
@@ -34,6 +42,7 @@ function add_task() {
 
 for (var i = 0; i < elements.length; i++) {
   elements[i].addEventListener("input", myOnChanged, false);
+
   elements[i].style.height = "auto";
   elements[i].style.height = elements[i].scrollHeight + "px";
 }
