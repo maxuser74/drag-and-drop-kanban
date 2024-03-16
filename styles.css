@@ -110,7 +110,12 @@
 }
 
 #todo-lane {
-  background-color: #f1948a;
+  background: rgb(238, 7, 7);
+  background: linear-gradient(
+    137deg,
+    rgba(238, 7, 7, 0.6) 94%,
+    rgba(255, 121, 0, 1) 100%
+  );
 }
 
 #doing-lane {

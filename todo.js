@@ -40,6 +40,7 @@ function add_task() {
 
   todoLane.appendChild(newTask);
   newTask.addEventListener("input", myOnChanged, false);
+
   populate_data(newTask);
 }
 
