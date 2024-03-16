@@ -12,6 +12,7 @@ var done_elements = [];
 var myOnChanged = function () {
   this.style.height = "auto";
   this.style.height = this.scrollHeight + "px";
+  populate_data();
 };
 
 window.addEventListener("resize", () => {
@@ -38,6 +39,8 @@ function add_task() {
   });
 
   todoLane.appendChild(newTask);
+  newTask.addEventListener("input", myOnChanged, false);
+  populate_data(newTask);
 }
 
 for (var i = 0; i < elements.length; i++) {
