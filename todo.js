@@ -5,6 +5,7 @@ const board = document.getElementById("board");
 
 const add_btn = document.getElementById("plus_btn");
 var elements = document.getElementsByClassName("task");
+
 var todo_elements = [];
 var doing_elements = [];
 var done_elements = [];

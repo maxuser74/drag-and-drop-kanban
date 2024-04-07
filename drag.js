@@ -1,5 +1,10 @@
 const draggables = document.querySelectorAll(".task");
 const droppables = document.querySelectorAll(".swim-lane");
+const trash = document.getElementById("trash_btn");
+
+trash.addEventListener("dragover", () => {
+  console.log("dragover");
+});
 
 draggables.forEach((task) => {
   task.addEventListener("dragstart", () => {
