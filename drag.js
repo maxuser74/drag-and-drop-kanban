@@ -2,8 +2,18 @@ const draggables = document.querySelectorAll(".task");
 const droppables = document.querySelectorAll(".swim-lane");
 const trash = document.getElementById("trash_btn");
 
-trash.addEventListener("dragover", () => {
-  console.log("dragover");
+trash.addEventListener("dragover", (e) => {
+  e.preventDefault(); // This is necessary to allow dropping.
+  console.log("dragover trash");
+});
+
+// Handle the drop event on the trash button to remove the task
+trash.addEventListener("drop", () => {
+  const draggingTask = document.querySelector(".is-dragging");
+  if (draggingTask) {
+    draggingTask.remove(); // Remove the task from the document
+  }
+  console.log("Task deleted");
 });
 
 draggables.forEach((task) => {
@@ -17,7 +27,7 @@ draggables.forEach((task) => {
 
 droppables.forEach((zone) => {
   zone.addEventListener("dragover", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default to allow dropping
 
     const bottomTask = insertAboveTask(zone, e.clientY);
     const curTask = document.querySelector(".is-dragging");
@@ -31,21 +41,19 @@ droppables.forEach((zone) => {
 });
 
 const insertAboveTask = (zone, mouseY) => {
-  const els = zone.querySelectorAll(".task:not(.is-dragging)");
+  const els = [...zone.querySelectorAll(".task:not(.is-dragging)")];
 
-  let closestTask = null;
-  let closestOffset = Number.NEGATIVE_INFINITY;
+  return els.reduce(
+    (closest, task) => {
+      const box = task.getBoundingClientRect();
+      const offset = mouseY - box.top - box.height / 2;
 
-  els.forEach((task) => {
-    const { top } = task.getBoundingClientRect();
-
-    const offset = mouseY - top;
-
-    if (offset < 0 && offset > closestOffset) {
-      closestOffset = offset;
-      closestTask = task;
-    }
-  });
-
-  return closestTask;
+      if (offset < 0 && offset > closest.offset) {
+        return { offset, element: task };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY }
+  ).element;
 };
