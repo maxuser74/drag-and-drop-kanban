@@ -1,14 +1,15 @@
 const draggables = document.querySelectorAll(".task");
 const droppables = document.querySelectorAll(".swim-lane");
-const trash = document.getElementById("trash_btn");
+const svgDiv = document.getElementById("svg_div"); // Get the svg_div element
 
-trash.addEventListener("dragover", (e) => {
+// Allow the svg_div to be a drop zone
+svgDiv.addEventListener("dragover", (e) => {
   e.preventDefault(); // This is necessary to allow dropping.
-  console.log("dragover trash");
+  console.log("dragover svg_div");
 });
 
-// Handle the drop event on the trash button to remove the task
-trash.addEventListener("drop", () => {
+// Handle the drop event on the svg_div to remove the task
+svgDiv.addEventListener("drop", () => {
   const draggingTask = document.querySelector(".is-dragging");
   if (draggingTask) {
     draggingTask.remove(); // Remove the task from the document

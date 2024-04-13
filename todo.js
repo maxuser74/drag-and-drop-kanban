@@ -3,7 +3,7 @@ const doingLane = document.getElementById("doing-lane");
 const doneLane = document.getElementById("done-lane");
 const board = document.getElementById("board");
 
-const add_btn = document.getElementById("plus_btn");
+const add_btn = document.getElementById("svg_div2");
 var elements = document.getElementsByClassName("task");
 
 var todo_elements = [];
