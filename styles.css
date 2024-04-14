@@ -93,17 +93,15 @@
 .tools {
   flex-direction: row-reverse;
   width: 100%;
-  height: 400px;
+
   position: fixed;
-  margin-top: -60px;
+  margin-top: -80px;
 }
 
 #svg_div {
-  width: 100px;
-  height: 100%;
+  width: 80px;
 }
 
 #svg_div2 {
-  width: 100px;
-  height: 100%;
+  width: 80px;
 }
