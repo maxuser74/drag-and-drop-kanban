@@ -72,15 +72,15 @@
 }
 
 #todo-lane {
-  background-color: rgba(238, 7, 7, 0.7);
+  background-color: rgba(238, 7, 7, 0.6);
 }
 
 #doing-lane {
-  background-color: rgba(255, 229, 126, 0.7);
+  background-color: rgba(255, 229, 126, 0.6);
 }
 
 #done-lane {
-  background-color: rgba(130, 224, 170, 0.7);
+  background-color: rgba(130, 224, 170, 0.6);
 }
 
 .tools {
