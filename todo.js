@@ -48,7 +48,7 @@ function add_task() {
 for (var i = 0; i < elements.length; i++) {
   elements[i].addEventListener("input", myOnChanged, false);
   elements[i].style.height = "auto";
-  elements[i].spellcheck = false;
+  elements[i].spellcheck = true;
   elements[i].style.height = elements[i].scrollHeight + "px";
 }
 
